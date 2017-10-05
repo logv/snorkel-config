@@ -1,0 +1,13 @@
+# use $GROUP to reference the users for a role
+# use ^GROUP to reference the tables for a group
+# use %GROUP to reference the permissions for a group
+
+# definition looks like
+# role:perm1,perm2,:table1,table2,:user1,user2,:
+
+ADMIN:::okay
+SNORKEL:::test
+
+admin:*:*:$ADMIN
+snorkel:query:snorkel*:$SNORKEL
+guest:query:snorkel*pagestats:guest
